@@ -1,6 +1,6 @@
 document.addEventListener("click", event => { console.log("You just clicked on:", event.target) })
 
-const API_URL = "http://localhost:3000/films"
+const API_DATABASE_URL = "http://localhost:3000/films"
 
 document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded")
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             <button data-id="${film.id} class="watched-btn">Watched</button>
             <button data-id="${film.id} class="favorite-btn">Favorite</button>
         `
-        const filmCollectionDiv = document.querySelector("#film-collection")
+        const filmCollectionDiv = document.querySelector(".film-collection")
         filmCollectionDiv.append(filmCardDiv)
     }
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         allFilms.forEach( film => { renderFilm(film) } ) 
     }
 
-    fetch(API_URL).then(response => response.json() )
+    fetch(API_DATABASE_URL).then(response => response.json() )
     .then( filmsArray => { console.log(filmsArray);
         renderAllFilms(filmsArray) 
     })
