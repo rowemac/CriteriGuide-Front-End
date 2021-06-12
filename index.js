@@ -21,8 +21,14 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         filmCollectionDiv.append(filmCardDiv)
     }
 
+    const renderAllFilms = (allFilms) => {
+        allFilms.forEach( film => { renderFilm(film) } ) 
+    }
 
-
+    fetch(API_URL).then(response => response.json() )
+    .then( filmsArray => { console.log(filmsArray);
+        renderAllFilms(filmsArray) 
+    })
 
 
 
