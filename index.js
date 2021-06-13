@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
         filmCardDiv.innerHTML = `
             <img src=${film.image} class="film-image">
-            <p>${film.title} | ${film.director} | ${film.year}</p>
+            <p class="film-info-el"><b>${film.title}</b><br>
+            <i>${film.director}</i>, ${film.year}</p>
             <button data-id="${film.id} class="watched-btn">Watched</button>
             <button data-id="${film.id} class="favorite-btn">Favorite</button>
         `
