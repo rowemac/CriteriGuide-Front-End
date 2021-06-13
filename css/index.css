@@ -13,15 +13,24 @@ img{
     grid-template-columns: auto auto auto auto;
 }
 
+.filmCard {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .film-info-el{
     text-align: center;
 }
 
 
-/* .watched-btn {
-
+.watched-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .favorite-btn {
 
-} */
+}
