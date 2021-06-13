@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             <button data-id="${film.id} class="watched-btn">Watched</button>
             <button data-id="${film.id} class="favorite-btn">Favorite</button>
         `
-        const filmCollectionDiv = document.querySelector(".film-collection")
+        const filmCollectionDiv = document.querySelector(".grid-container")
         filmCollectionDiv.append(filmCardDiv)
     }
 
