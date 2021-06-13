@@ -31,6 +31,23 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         renderAllFilms(filmsArray) 
     })
 
+    document.addEventListener("click", event => { event.preventDefault();
+        
+        if(event.target.matches("watched-btn")) {
+            console.log(event.target)
+        }
+    
+    })
+
+    document.addEventListener("click", event => { event.preventDefault();
+        
+        if(event.target.matches("favorite-btn")) {
+            console.log(event.target)
+        }
+    
+    })
+
+
 
 
 
