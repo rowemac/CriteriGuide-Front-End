@@ -34,10 +34,22 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
     })
 
     document.addEventListener("click", event => { event.preventDefault();
-        
+        watchedFilm = !watchedFilm
 
         if(event.target.matches(".watched-btn")) {
             console.log(event.target)
+            const filmImgTag = event.target.closest(".filmCard").querySelector("img")
+            const filmWatchedBtnTag = event.target.closest(".filmCard").querySelector("button")
+
+            
+            if(watchedFilm) {
+                filmImgTag.style.opacity = 0.3
+                filmWatchedBtnTag.textContent = "Watched ✓"
+            } else {
+                filmImgTag.style.opacity = 1
+                filmWatchedBtnTag.textContent = "Watched"
+            }
+
 
 
         }
