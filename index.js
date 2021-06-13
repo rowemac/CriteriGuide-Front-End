@@ -6,7 +6,6 @@ let favoritedFilm = false
 
 document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded")
 
-
     const renderFilm = (film) => {
         const filmCardDiv = document.createElement("div")
         filmCardDiv.classList.add("filmCard")
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             console.log(event.target)
             const filmImgTag = event.target.closest(".filmCard").querySelector("img")
             const filmWatchedBtnTag = event.target.closest(".filmCard").querySelector("button")
-
             
             if(watchedFilm) {
                 filmImgTag.style.opacity = 0.3
@@ -50,7 +48,20 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
                 filmWatchedBtnTag.textContent = "Watched"
             }
 
+            const id = event.target.dataset.id
+            const bodyObj = {
+                watched: true
+            }
 
+            fetch(`${API_DATABASE_URL}/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(bodyObj)
+            })
+            .then(response => response.json())
+            .then(updatedFilm => {
+                console.log(updatedFilm)
+            })
 
         }
 
