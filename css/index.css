@@ -1,3 +1,7 @@
+body {
+    font-family: 'Times New Roman', Times, serif
+}
+
 img{ 
     display: block; 
     height: 400px; 
@@ -24,12 +28,27 @@ img{
 button {
     background-color: rgb(71, 69, 69); 
     border: none;
-    color: white;
+    border-width: 10px;
+    color: ghostwhite;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: ghostwhite; 
+    border: 1px solid rgb(71, 69, 69);
+    color: rgb(71, 69, 69);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
 }
 
 .watched-btn {
@@ -38,4 +57,8 @@ button {
 
 .favorite-btn {
     margin-left: 5px;
+}
+
+.film-info-el {
+    color: rgb(71, 69, 69);
 }
