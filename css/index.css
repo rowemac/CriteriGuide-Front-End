@@ -1,5 +1,6 @@
 body {
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    background-color: f8f8ff;
 }
 
 img{ 
@@ -26,7 +27,7 @@ img{
 }
 
 button {
-    background-color: rgb(71, 69, 69); 
+    background-color: rgb(114, 113, 113); 
     border: none;
     border-width: 10px;
     color: ghostwhite;
@@ -36,13 +37,13 @@ button {
     display: inline-block;
     font-size: 16px;
     border-radius: 4px;
-    transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
 
 button:hover {
     background-color: ghostwhite; 
-    box-shadow:  0 0 0 1px rgb(71, 69, 69);
-    color: rgb(71, 69, 69);
+    box-shadow:  0 0 0 1px rgb(114, 113, 113);
+    color: rgb(114, 113, 113);
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
