@@ -1,6 +1,8 @@
 document.addEventListener("click", event => { console.log("You just clicked on:", event.target) })
 
 const API_DATABASE_URL = "http://localhost:3000/films"
+let watchedFilm = false
+let favoritedFilm = false
 
 document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded")
 
@@ -35,18 +37,22 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         
         if(event.target.matches("watched-btn")) {
             console.log(event.target)
-        }
-    
-    })
 
-    document.addEventListener("click", event => { event.preventDefault();
-        
+
+            watchedFilm = !watchedFilm
+            
+            if (watchedFilm) {
+
+            }
+            
+
+        }
+
         if(event.target.matches("favorite-btn")) {
             console.log(event.target)
         }
     
     })
-
 
 
 
