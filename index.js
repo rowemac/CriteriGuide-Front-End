@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             <img src=${film.image} class="film-image">
             <p class="film-info-el"><b>${film.title}</b><br>
             <i>${film.director}</i>, ${film.year}</p>
-            <button data-id="${film.id} class="watched-btn">Watched</button>
-            <button data-id="${film.id} class="favorite-btn">Favorite</button>
+            <button data-id="${film.id}" class="watched-btn">Watched</button>
+            <button data-id="${film.id}" class="favorite-btn">Favorite</button>
         `
         const filmCollectionDiv = document.querySelector(".grid-container")
         filmCollectionDiv.append(filmCardDiv)
