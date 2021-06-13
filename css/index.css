@@ -1,0 +1,27 @@
+img{ 
+    display: block; 
+    height: 400px; 
+    width: 322px; 
+    object-fit: cover; 
+    object-position: center; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.film-info-el{
+    text-align: center;
+}
+
+
+/* .watched-btn {
+
+}
+
+.favorite-btn {
+
+} */
