@@ -1,6 +1,6 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: f8f8ff;
+    background-color: ghostwhite;
 }
 
 img{ 
@@ -37,7 +37,7 @@ img{
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
-    background-color: rgb(240, 240, 247);
+    background-color: rgb(234, 234, 241);
 }
 
 button {
@@ -82,11 +82,12 @@ button:hover {
     background-color: rgb(34, 33, 33);
     overflow: hidden;
     border-radius: 4px;
+    margin-bottom: 20px;
   }
   
   .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: #ddd;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
