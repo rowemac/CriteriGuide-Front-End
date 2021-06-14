@@ -1,6 +1,6 @@
 // document.addEventListener("click", event => { console.log("You just clicked on:", event.target) })
 
-const API_DATABASE_URL = "http://localhost:3000/films"
+// const API_DATABASE_URL = "http://localhost:3000/films"
 let watchedFilm = false
 let favoritedFilm = false
 
@@ -27,10 +27,12 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         allFilms.forEach( film => { renderFilm(film) } ) 
     }
 
-    fetch(API_DATABASE_URL).then(response => response.json() )
-    .then( filmsArray => { console.log(filmsArray);
-        renderAllFilms(filmsArray) 
-    })
+    // fetch(API_DATABASE_URL).then(response => response.json() )
+    // .then( filmsArray => { console.log(filmsArray);
+    //     renderAllFilms(filmsArray) 
+    // })
+
+    
 
     document.addEventListener("click", event => { event.preventDefault();
         
