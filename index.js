@@ -33,11 +33,12 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
     })
 
     document.addEventListener("click", event => { event.preventDefault();
-        watchedFilm = !watchedFilm
-        favoritedFilm = !favoritedFilm
+        
+        
 
         if(event.target.matches(".watched-btn")) {
             console.log(event.target)
+            watchedFilm = !watchedFilm
             const filmImgTag = event.target.closest(".filmCard").querySelector("img")
             const filmWatchedBtnTag = event.target.closest(".filmCard").querySelector(".watched-btn")
             
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
             const id = event.target.dataset.id
             const filmObj = {
-                watched: true
+                watched: watchedFilm
             }
 
             fetch(`${API_DATABASE_URL}/${id}`, {
@@ -69,7 +70,8 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         if(event.target.matches(".favorite-btn")) {
             console.log(event.target)
             const favoriteBtnTag = event.target.closest(".filmCard").querySelector(".favorite-btn")
-
+            favoritedFilm = !favoritedFilm
+            
             if(favoritedFilm) {
                 favoriteBtnTag.style.backgroundColor = "#e21d1d"
             } else {
@@ -78,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
             const id = event.target.dataset.id
             const filmObj = {
-                favorited: true
+                favorited: favoritedFilm
             }
 
             fetch(`${API_DATABASE_URL}/${id}`, {
