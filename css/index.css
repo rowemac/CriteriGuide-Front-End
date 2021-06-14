@@ -78,3 +78,23 @@ button:hover {
     color: rgb(71, 69, 69);
 }
 
+.topnav {
+    background-color: rgb(34, 33, 33);
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    transition-duration: 0.4s;
+}
