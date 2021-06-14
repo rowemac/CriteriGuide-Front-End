@@ -34,11 +34,12 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
     document.addEventListener("click", event => { event.preventDefault();
         watchedFilm = !watchedFilm
+        favoritedFilm = !favoritedFilm
 
         if(event.target.matches(".watched-btn")) {
             console.log(event.target)
             const filmImgTag = event.target.closest(".filmCard").querySelector("img")
-            const filmWatchedBtnTag = event.target.closest(".filmCard").querySelector("button")
+            const filmWatchedBtnTag = event.target.closest(".filmCard").querySelector(".watched-btn")
             
             if(watchedFilm) {
                 filmImgTag.style.opacity = 0.3
@@ -49,14 +50,14 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             }
 
             const id = event.target.dataset.id
-            const bodyObj = {
+            const filmObj = {
                 watched: true
             }
 
             fetch(`${API_DATABASE_URL}/${id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(bodyObj)
+                body: JSON.stringify(filmObj)
             })
             .then(response => response.json())
             .then(updatedFilm => {
@@ -67,6 +68,30 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
         if(event.target.matches(".favorite-btn")) {
             console.log(event.target)
+            const favoriteBtnTag = event.target.closest(".filmCard").querySelector(".favorite-btn")
+
+            if(favoritedFilm) {
+                favoriteBtnTag.style.backgroundColor = "#e21d1d"
+            } else {
+                favoriteBtnTag.style.backgroundColor = "#808080"
+            }
+
+            const id = event.target.dataset.id
+            const filmObj = {
+                favorited: true
+            }
+
+            fetch(`${API_DATABASE_URL}/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(filmObj)
+            })
+            .then(response => response.json())
+            .then(updatedFilm => {
+                console.log(updatedFilm)
+            })
+
+
         }
 
     })
