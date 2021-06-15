@@ -55,6 +55,9 @@ class Film {
             <img src=${this.image} class="film-image">
             <p class="film-info-el"><b>${this.title}</b><br>
             <i>${this.director}</i>, ${this.year}</p>
+            <p class="film-synopsis-el" hidden>${this.synopsis}</p>
+            <p class="film-genre-el" hidden>${this.genre}</p>
+            <p class="film-runtime-el" hidden>${this.runtime}</p>
             <button data-id="${this.id}" class="watched-btn">Watched</button>
             <button data-id="${this.id}" class="favorite-btn">Favorite</button>
         `
