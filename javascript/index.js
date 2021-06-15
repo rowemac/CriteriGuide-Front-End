@@ -1,23 +1,9 @@
-// document.addEventListener("click", event => { console.log("You just clicked on:", event.target) })
-
-// const API_DATABASE_URL = "http://localhost:3000/films"
 let watchedFilm = false
 let favoritedFilm = false
 
 document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded");
     
     API.addFilms();
-
-    // const renderAllFilms = (allFilms) => {
-    //     allFilms.forEach( film => { renderFilm(film) } ) 
-    // }
-
-    // fetch(API_DATABASE_URL).then(response => response.json() )
-    // .then( filmsArray => { console.log(filmsArray);
-    //     renderAllFilms(filmsArray) 
-    // })
-
-
 
     document.addEventListener("click", event => { event.preventDefault();
 
@@ -90,7 +76,21 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             console.log(event.target)
         }
 
+        if (event.target.matches(".film-image")) {
+            const modal = document.getElementById("modal")
+            const span = document.getElementsByClassName("close")[0]
 
+            modal.style.display = "block";
+            
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+            }
+        }
     })
-
 })
