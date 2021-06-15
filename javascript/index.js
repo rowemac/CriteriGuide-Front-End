@@ -1,11 +1,11 @@
 let watchedFilm = false
 let favoritedFilm = false
 
-document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded");
+document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded")
     
-    API.addFilms();
+    API.addFilms()
 
-    document.addEventListener("click", event => { event.preventDefault();
+    document.addEventListener("click", event => { event.preventDefault()
 
         if(event.target.matches(".watched-btn")) {
             watchedFilm = !watchedFilm
@@ -116,8 +116,11 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
         if (event.target.matches(".film-image")) {
             const indFilm = event.target.closest(".film-card")
+            const filmModalImage = indFilm.querySelector(".film-image")
             const filmModalInfo = indFilm.querySelector(".film-info-el").innerHTML
-            console.log(indFilm)
+            const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").textContent
+            const filmModalGenre = indFilm.querySelector(".film-genre-el").textContent
+            const filmModalRuntime = indFilm.querySelector(".film-runtime-el").textContent
 
             const filmModal = document.querySelector(".film-modal")
             const filmModalContent = document.createElement("div")
@@ -129,9 +132,9 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             <span class="close">&times;</span>
             <img src=${filmModalImage} class="film-modal-image">
             <p class="film-modal-info">${filmModalInfo}</p>
-            <p>Synopsis: ${indFilm.synopsis}</p>
-            <p>Genre: ${indFilm.genre}</p>
-            <p>Runtime: ${indFilm.runtime}</p> 
+            <p class="film-modal-synopsis>${filmModalSynopsis}</p>
+            <p class="film-modal-genre">${filmModalGenre}</p>
+            <p class="film-modal-runtime">${filmModalRuntime}</p> 
             <button data-id="${indFilm.id}" class="add-notes-btn">Add Notes</button>
             `
             filmModal.appendChild(filmModalContent)
@@ -139,15 +142,15 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             const modal = document.getElementById("modal")
             const span = document.getElementsByClassName("close")[0]
 
-            modal.style.display = "block";
+            modal.style.display = "block"
             
             span.onclick = function() {
-                modal.style.display = "none";
+                modal.style.display = "none"
             }
             
             window.onclick = function(event) {
                 if (event.target == modal) {
-                  modal.style.display = "none";
+                  modal.style.display = "none"
                 }
             }
         }
