@@ -5,6 +5,7 @@ let watchedFilm = false
 let favoritedFilm = false
 
 document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded");
+    
     API.addFilms();
 
     // const renderAllFilms = (allFilms) => {
@@ -48,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             .then(updatedFilm => {
                 console.log(updatedFilm)
             })
-
         }
 
         if(event.target.matches(".favorite-btn")) {
@@ -76,9 +76,25 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             .then(updatedFilm => {
                 console.log(updatedFilm)
             })
-
-
         }
+
+        if (event.target.matches("#watched-link")) {
+            console.log(event.target)
+        }
+
+        if (event.target.matches("#favorited-link")) {
+            console.log(event.target)
+        }
+
+        if (event.target.matches("#unwatched-link")) {
+            console.log(event.target)
+        }
+
+
+
+
+
+
 
     })
 
