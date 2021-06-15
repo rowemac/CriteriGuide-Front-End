@@ -116,7 +116,8 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
         if (event.target.matches(".film-image")) {
             const indFilm = event.target.closest(".film-card")
-            const filmModalImage = indFilm.querySelector(".film-image")
+            const filmModalImage = indFilm.querySelector(".film-image").src
+            debugger
             const filmModalInfo = indFilm.querySelector(".film-info-el").innerHTML
             const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").textContent
             const filmModalGenre = indFilm.querySelector(".film-genre-el").textContent
