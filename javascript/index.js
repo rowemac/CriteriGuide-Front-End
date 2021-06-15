@@ -63,20 +63,72 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         }
 
         if (event.target.matches("#watched-link")) {
-            console.log(event.target)
-            const filmCardDiv = document.getElementsByClassName(".film-card")
-
-        }
+            const filmCollectionDiv = document.querySelector(".grid-container")
+            filmCollectionDiv.innerHTML = ""
+            fetch("http://localhost:3000/films")
+            .then(response => response.json())
+            .then(films => {
+                films.forEach( film => {
+                    if(film.watched === true) {
+                        const { id, title, director, year, synopsis, runtime, image, favorited, watched, genre } = film
+                        new Film( id, title, director, year, synopsis, runtime, image, favorited, watched, genre )
+                    }
+                })
+            })
+        }   
 
         if (event.target.matches("#favorited-link")) {
-            console.log(event.target)
+            const filmCollectionDiv = document.querySelector(".grid-container")
+            filmCollectionDiv.innerHTML = ""
+            fetch("http://localhost:3000/films")
+            .then(response => response.json())
+            .then(films => {
+                films.forEach( film => {
+                    if(film.favorited === true) {
+                        const { id, title, director, year, synopsis, runtime, image, favorited, watched, genre } = film
+                        new Film( id, title, director, year, synopsis, runtime, image, favorited, watched, genre )
+                    }
+                })
+            })
         }
 
         if (event.target.matches("#unwatched-link")) {
-            console.log(event.target)
+            const filmCollectionDiv = document.querySelector(".grid-container")
+            filmCollectionDiv.innerHTML = ""
+            fetch("http://localhost:3000/films")
+            .then(response => response.json())
+            .then(films => {
+                films.forEach( film => {
+                    if(film.watched === false) {
+                        const { id, title, director, year, synopsis, runtime, image, favorited, watched, genre } = film
+                        new Film( id, title, director, year, synopsis, runtime, image, favorited, watched, genre )
+                    }
+                })
+            })
         }
 
         if (event.target.matches(".film-image")) {
+            const indFilm = event.target.closest(".film-card")
+            const filmModalInfo = indFilm.querySelector(".film-info-el").innerHTML
+            console.log(indFilm)
+
+            const filmModal = document.querySelector(".film-modal")
+            const filmModalContent = document.createElement("div")
+            filmModalContent.classList.add("film-modal-content")
+            filmModalContent.dataset.id = indFilm.id
+
+
+            filmModalContent.innerHTML = `
+            <span class="close">&times;</span>
+            <img src=${filmModalImage} class="film-modal-image">
+            <p class="film-modal-info">${filmModalInfo}</p>
+            <p>Synopsis: ${indFilm.synopsis}</p>
+            <p>Genre: ${indFilm.genre}</p>
+            <p>Runtime: ${indFilm.runtime}</p> 
+            <button data-id="${indFilm.id}" class="add-notes-btn">Add Notes</button>
+            `
+            filmModal.appendChild(filmModalContent)
+            
             const modal = document.getElementById("modal")
             const span = document.getElementsByClassName("close")[0]
 
