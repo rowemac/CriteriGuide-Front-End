@@ -60,35 +60,11 @@ class Film {
         `
     }
 
-    renderFilmModal() {
-        const filmModal = document.querySelector(".film-modal")
-        const filmModalContent = document.createElement("div")
+    // renderFilmModal() {
+    // }
 
-        filmModalContent.classList.add("film-modal-content")
-        filmModalContent.dataset.id = this.id
-        filmModalContent.innerHTML += this.modalHTML()
-        film.appendChild(filmModal)
-    }
+    // modalHTML() {
 
-    modalHTML() {
-        return `
-            <span class="close">&times;</span>
-            <img src=${this.image} class="film-modal-image">
-            <p class="film-modal-info"><b>${this.title}</b>
-            <i>${this.director}</i>, ${this.year}</p>
-            <p>Synopsis: ${this.synopsis}</p>
-            <p>Genre: ${this.genre}</p>
-            <p>Runtime: ${this.runtime}</p> 
-            <button data-id="${this.id}" class="add-notes-btn">Add Notes</button>
-        `
-    }
-
-    // static watchedFilms() {
-    //     const filmCollectionDiv = document.querySelector(".grid-container")
-    //     filmCollectionDiv.innerHTML = ""
-    //     if(this.watched === true) { console.log(this)
-    //         this.renderFilm()
-    //     }
     // }
 
 }
