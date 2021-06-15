@@ -107,6 +107,13 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             })
         }
 
+        if (event.target.matches("#logo-home-link")) {
+            const filmCollectionDiv = document.querySelector(".grid-container")
+            filmCollectionDiv.innerHTML = ""
+            API.addFilms()
+        }
+
+
         if (event.target.matches(".film-image")) {
             const indFilm = event.target.closest(".film-card")
             const filmModalInfo = indFilm.querySelector(".film-info-el").innerHTML
