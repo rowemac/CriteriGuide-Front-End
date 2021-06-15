@@ -47,5 +47,16 @@ class Film {
         film.appendChild(filmModal)
     }
 
+    modalHTML() {
+        return `
+            <img src=${this.image} class="film-modal-image">
+            <p class="film-modal-info"><b>${this.title}</b>
+            <i>${this.director}</i>, ${this.year}</p>
+            <p>Synopsis: ${this.synopsis}</p>
+            <p>Genre: ${this.genre}</p>
+            <p>Runtime: ${this.runtime}</p> 
+            <button data-id="${this.id}" class="add-notes-btn">Add Notes</button>
+        `
+    }
 
 }
