@@ -22,7 +22,7 @@ img{
     grid-template-columns: auto auto auto auto;
 }
 
-.filmCard {
+.film-card {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 10px;
@@ -31,7 +31,7 @@ img{
     transition-duration: 0.3s;
 }
 
-.filmCard:hover {
+.film-card:hover {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 10px;

@@ -20,7 +20,7 @@ class Film {
         const filmCollectionDiv = document.querySelector(".grid-container")
         const filmCardDiv = document.createElement("div")
 
-        filmCardDiv.classList.add("filmCard")
+        filmCardDiv.classList.add("film-card")
         filmCardDiv.dataset.id = this.id
         filmCardDiv.id = this.id
         filmCardDiv.innerHTML += this.filmHTML()

@@ -22,10 +22,9 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
     document.addEventListener("click", event => { event.preventDefault();
 
         if(event.target.matches(".watched-btn")) {
-            console.log(event.target)
             watchedFilm = !watchedFilm
-            const filmImgTag = event.target.closest(".filmCard").querySelector("img")
-            const filmWatchedBtnTag = event.target.closest(".filmCard").querySelector(".watched-btn")
+            const filmImgTag = event.target.closest(".film-card").querySelector("img")
+            const filmWatchedBtnTag = event.target.closest(".film-card").querySelector(".watched-btn")
             
             if(watchedFilm) {
                 filmImgTag.style.opacity = 0.3
@@ -52,8 +51,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         }
 
         if(event.target.matches(".favorite-btn")) {
-            console.log(event.target)
-            const favoriteBtnTag = event.target.closest(".filmCard").querySelector(".favorite-btn")
+            const favoriteBtnTag = event.target.closest(".film-card").querySelector(".favorite-btn")
             favoritedFilm = !favoritedFilm
             
             if(favoritedFilm) {
@@ -80,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
         if (event.target.matches("#watched-link")) {
             console.log(event.target)
+            const filmCardDiv = document.getElementsByClassName(".film-card")
+
         }
 
         if (event.target.matches("#favorited-link")) {
@@ -89,11 +89,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         if (event.target.matches("#unwatched-link")) {
             console.log(event.target)
         }
-
-
-
-
-
 
 
     })
