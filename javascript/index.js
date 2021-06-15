@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             const filmModalImage = indFilm.querySelector(".film-image").src
             debugger
             const filmModalInfo = indFilm.querySelector(".film-info-el").innerHTML
-            const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").textContent
+            const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").innerText
             const filmModalGenre = indFilm.querySelector(".film-genre-el").textContent
             const filmModalRuntime = indFilm.querySelector(".film-runtime-el").textContent
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             <span class="close">&times;</span>
             <img src=${filmModalImage} class="film-modal-image">
             <p class="film-modal-info">${filmModalInfo}</p>
-            <p class="film-modal-synopsis>${filmModalSynopsis}</p>
+            <p class="film-modal-synopsis">${filmModalSynopsis}</p>
             <p class="film-modal-genre">${filmModalGenre}</p>
             <p class="film-modal-runtime">${filmModalRuntime}</p> 
             <button data-id="${indFilm.id}" class="add-notes-btn">Add Notes</button>
