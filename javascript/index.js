@@ -147,13 +147,19 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             
             span.onclick = function() {
                 modal.style.display = "none"
+                modal.innerHTML = ""
             }
             
             window.onclick = function(event) {
                 if (event.target == modal) {
                   modal.style.display = "none"
+                  modal.innerHTML = ""
                 }
             }
+        }
+
+        if (event.target.matches("add-notes-btn")) {
+
         }
     })
 })
