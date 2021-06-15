@@ -37,6 +37,15 @@ class Film {
         `
     }
 
-    
+    renderFilmModal() {
+        const filmModal = document.querySelector(".film-modal")
+        const filmModalContent = document.createElement("div")
+
+        filmModalContent.classList.add("film-modal-content")
+        filmModalContent.dataset.id = this.id
+        filmModalContent.innerHTML += this.modalHTML()
+        film.appendChild(filmModal)
+    }
+
 
 }
