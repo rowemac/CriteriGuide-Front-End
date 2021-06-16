@@ -151,23 +151,40 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             function openForm() {
                 noteForm.style.display = "block"
             }
+            
             openForm()
+
         }
 
         if (event.target.matches(".close")) {
+            const noteForm = document.getElementById("note-form")
+            const filmModal = document.getElementById("modal")
+
             function closeForm() {
-                document.getElementById("note-form").style.display = "none"
+                noteForm.style.display = "none"
             }
             closeForm()
 
             function closeModal() {
-                document.getElementById("modal").style.display = "none"
+                filmModal.style.display = "none"
+                filmModal.innerHTML = ""
             }
             closeModal()
         }
 
-        if (event.target.matches(".submit-btn")) {
+        // if (event.target.matches(".submit-btn")) {
+        //     const filmModalContent = document.querySelector(".film-modal-content")
+        //     const filmModalNotes = filmModalContent.createElement("div")
+        //     filmModalNotes.classList.add("film-modal-notes")
+        //     filmModalNotes.dataset.id = filmModalContent.id 
 
-        }
+        //     filmModalNoted.innerHTML =  `
+        //     <p></p>
+        //     <p></p>
+        //     <p></p>
+        //     <p></p>
+        //     `
+
+        // }
     })
 })
