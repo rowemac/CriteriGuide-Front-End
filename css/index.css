@@ -149,6 +149,7 @@ button:hover {
     background-color: ghostwhite;
 }
 
-.note-form-container {
-    text-align: center;
+.submit-btn {
+    align-self: center;
 }
+
