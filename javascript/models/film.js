@@ -61,15 +61,7 @@ class Film {
             <button data-id="${this.id}" class="watched-btn">Watched</button>
             <button data-id="${this.id}" class="favorite-btn">Favorite</button>
             <br><br>
-            <button data-id="${this.id}" class="add-notes-btn">Add Notes</button>
         `
     }
-
-    // renderFilmModal() {
-    // }
-
-    // modalHTML() {
-
-    // }
 
 }
