@@ -159,7 +159,17 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         }
 
         if (event.target.matches(".add-notes-btn")) {
+            function openForm() {
+                document.getElementById("note-form").style.display = "block"
+            }
+            openForm()
+        }
 
+        if (event.target.matches(".close-btn")) {
+            function closeForm() {
+                document.getElementById("note-form").style.display = "none"
+            }
+            closeForm()
         }
     })
 })
