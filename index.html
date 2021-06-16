@@ -27,19 +27,19 @@
             </form>
         </div> -->
 
-        <div class="note-form-popup" id="myForm">
+        <div class="note-form-popup" id="note-form">
             <form action="/action_page.php" class="note-form-container">
-              <h4>Add a Note</h4>
+              <h3>Add a Note</h3>
           
               <label for="title"><b>Title</b></label>
-              <input type="text" placeholder="Title" name="title" value="" >
+              <input type="text" placeholder="Title" name="title" value="" ><br><br>
           
               <label for="content"><b>Note</b></label>
-              <input type="text" placeholder="Note" name="content" value="" >
+              <input type="text-area" placeholder="Note" name="content" value="" ><br><br>
 
               <label for="timestamp"><b>Timestamp</b></label>
-              <input type="text" placeholder="Timestamp" name="timestamp" value="" >
-          
+              <input type="text" placeholder="Timestamp" name="timestamp" value="" ><br><br>
+              <br><br>
               <button type="submit" class="submit-btn">Create Note</button>
               <button type="submit" class="close-btn" onclick="closeForm()">Close</button>
             </form>
