@@ -13,10 +13,6 @@ img{
     margin-right: auto;
 }
 
-/* #site-logo {
-    
-} */
-
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -125,7 +121,7 @@ button:hover {
     font-weight: bold;
     padding-right: 5px;
 }
-  
+
 .close:hover,
 .close:focus {
     color: black;
