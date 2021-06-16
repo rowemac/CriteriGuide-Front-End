@@ -1,5 +1,6 @@
 let watchedFilm = false
 let favoritedFilm = false
+let displayNoteForm = false
 
 document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded")
     
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").innerText
             const filmModalGenre = indFilm.querySelector(".film-genre-el").textContent
             const filmModalRuntime = indFilm.querySelector(".film-runtime-el").textContent
+            
             const filmModal = document.querySelector(".film-modal")
             const filmModalContent = document.createElement("div")
             
@@ -135,7 +137,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             <p class="film-modal-synopsis">${filmModalSynopsis}</p>
             <p class="film-modal-genre">${filmModalGenre}</p>
             <p class="film-modal-runtime">${filmModalRuntime}</p> 
-            <button data-id="${indFilm.id}" class="add-notes-btn">Add Notes</button>
             `
             filmModal.appendChild(filmModalContent)
             
@@ -157,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             }
         }
 
-        if (event.target.matches("add-notes-btn")) {
+        if (event.target.matches(".add-notes-btn")) {
 
         }
     })
