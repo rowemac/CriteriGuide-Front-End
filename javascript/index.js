@@ -122,13 +122,12 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").textContent
             const filmModalGenre = indFilm.querySelector(".film-genre-el").textContent
             const filmModalRuntime = indFilm.querySelector(".film-runtime-el").textContent
-            
             const filmModal = document.querySelector(".film-modal")
-            const filmModalContent = document.createElement("div")
+            const modal = document.getElementById("modal")
             
+            const filmModalContent = document.createElement("div")
             filmModalContent.classList.add("film-modal-content")
             filmModalContent.dataset.id = indFilm.id
-
 
             filmModalContent.innerHTML = `
             <span class="close">&times;</span>
@@ -136,26 +135,14 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             <p class="film-modal-info">${filmModalInfo}</p>
             <p class="film-modal-synopsis">${filmModalSynopsis}</p>
             <p class="film-modal-genre">${filmModalGenre}</p>
-            <p class="film-modal-runtime">${filmModalRuntime}</p> 
+            <p class="film-modal-runtime">${filmModalRuntime}</p>
+            <br><br>
+            <button data-id="${indFilm.id}" class="add-notes-btn">Add Notes</button>
             `
             filmModal.appendChild(filmModalContent)
-            
-            const modal = document.getElementById("modal")
-            const span = document.getElementsByClassName("close")[0]
 
             modal.style.display = "block"
             
-            span.onclick = function() {
-                modal.style.display = "none"
-                modal.innerHTML = ""
-            }
-            
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                  modal.style.display = "none"
-                  modal.innerHTML = ""
-                }
-            }
         }
 
         if (event.target.matches(".add-notes-btn")) {
@@ -172,6 +159,11 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
                 document.getElementById("note-form").style.display = "none"
             }
             closeForm()
+
+            function closeModal() {
+                document.getElementById("modal").style.display = "none"
+            }
+            closeModal()
         }
 
         if (event.target.matches(".submit-btn")) {
