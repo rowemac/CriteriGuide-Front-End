@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             const indFilm = event.target.closest(".film-card")
             const filmModalImage = indFilm.querySelector(".film-image").src
             const filmModalInfo = indFilm.querySelector(".film-info-el").innerHTML
-            const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").innerText
+            const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").textContent
             const filmModalGenre = indFilm.querySelector(".film-genre-el").textContent
             const filmModalRuntime = indFilm.querySelector(".film-runtime-el").textContent
             
@@ -159,13 +159,15 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         }
 
         if (event.target.matches(".add-notes-btn")) {
+            const noteForm = document.getElementById("note-form")
+
             function openForm() {
-                document.getElementById("note-form").style.display = "block"
+                noteForm.style.display = "block"
             }
             openForm()
         }
 
-        if (event.target.matches(".close-btn")) {
+        if (event.target.matches(".close")) {
             function closeForm() {
                 document.getElementById("note-form").style.display = "none"
             }
@@ -173,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         }
 
         if (event.target.matches(".submit-btn")) {
-            
+
         }
     })
 })
