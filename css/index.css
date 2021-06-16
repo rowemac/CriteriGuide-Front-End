@@ -132,3 +132,18 @@ button:hover {
     cursor: pointer;
 }
 
+.note-form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 2px solid rgb(114, 113, 113);
+    border-radius: 2px;
+    z-index: 9;
+}
+
+.note-form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: ghostwhite;
+  }
