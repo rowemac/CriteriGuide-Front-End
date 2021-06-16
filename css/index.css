@@ -123,6 +123,7 @@ button:hover {
     float: right;
     font-size: 26px;
     font-weight: bold;
+    padding-right: 5px;
 }
   
 .close:hover,
@@ -146,4 +147,8 @@ button:hover {
     max-width: 300px;
     padding: 10px;
     background-color: ghostwhite;
-  }
+}
+
+.note-form-container {
+    text-align: center;
+}
