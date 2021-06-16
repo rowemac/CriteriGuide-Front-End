@@ -18,17 +18,35 @@
             <a id="unwatched-link" href="http://localhost:5000">Queue</a>
         </div>
 
+        <!-- <div class="note-form-popup" id="note-form">
+            <form class="notes-form">
+                <input type="text" name="title" value="" placeholder="Title" class="input-text">
+                <input type="text" name="content" value="" placeholder="Content" class="input-text">
+                <input type="text" name="timestamp" value="" placeholder="Timestamp" class="input-text">
+                <input type="submit" name="submit" value="Save" class="submit">
+            </form>
+        </div> -->
+
+        <div class="note-form-popup" id="myForm">
+            <form action="/action_page.php" class="note-form-container">
+              <h4>Add a Note</h4>
+          
+              <label for="title"><b>Title</b></label>
+              <input type="text" placeholder="Title" name="title" value="" >
+          
+              <label for="content"><b>Note</b></label>
+              <input type="text" placeholder="Note" name="content" value="" >
+
+              <label for="timestamp"><b>Timestamp</b></label>
+              <input type="text" placeholder="Timestamp" name="timestamp" value="" >
+          
+              <button type="submit" class="submit-btn">Create Note</button>
+              <button type="submit" class="close-btn" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        
         <div class="grid-container">
-            <div id="modal" class="film-modal">
-                <div class="notes-form-container">
-                    <form class="notes-form">
-                        <input type="text" name="title" value="" placeholder="Title" class="input-text">
-                        <input type="text" name="content" value="" placeholder="Content" class="input-text">
-                        <input type="text" name="timestamp" value="" placeholder="Timestamp" class="input-text">
-                        <input type="submit" name="submit" value="Save" class="submit">
-                    </form>
-                </div>
-            </div>
+            <div id="modal" class="film-modal"></div>
         </div>
     </body>
 </html>
