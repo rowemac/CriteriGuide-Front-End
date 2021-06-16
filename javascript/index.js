@@ -171,5 +171,9 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             }
             closeForm()
         }
+
+        if (event.target.matches(".submit-btn")) {
+            
+        }
     })
 })
