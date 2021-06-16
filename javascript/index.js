@@ -117,14 +117,13 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         if (event.target.matches(".film-image")) {
             const indFilm = event.target.closest(".film-card")
             const filmModalImage = indFilm.querySelector(".film-image").src
-            debugger
             const filmModalInfo = indFilm.querySelector(".film-info-el").innerHTML
             const filmModalSynopsis = indFilm.querySelector(".film-synopsis-el").innerText
             const filmModalGenre = indFilm.querySelector(".film-genre-el").textContent
             const filmModalRuntime = indFilm.querySelector(".film-runtime-el").textContent
-
             const filmModal = document.querySelector(".film-modal")
             const filmModalContent = document.createElement("div")
+            
             filmModalContent.classList.add("film-modal-content")
             filmModalContent.dataset.id = indFilm.id
 
