@@ -114,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             API.addFilms()
         }
 
-
         if (event.target.matches(".film-image")) {
             const indFilm = event.target.closest(".film-card")
             const filmModalImage = indFilm.querySelector(".film-image").src
@@ -142,7 +141,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             filmModal.appendChild(filmModalContent)
 
             modal.style.display = "block"
-            
         }
 
         if (event.target.matches(".add-notes-btn")) {
@@ -153,6 +151,45 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             }
             
             openForm()
+
+            noteForm.addEventListener("click", event => { event.preventDefault()
+                console.log(event.target)
+                if (event.target.matches(".submit-btn")) {
+                    const filmModalContent = document.querySelector(".film-modal-content")
+                    const filmID = filmModalContent.dataset.id
+                    // const filmModalNotes = filmModalContent.createElement("div")
+                    // filmModalNotes.classList.add("film-modal-notes")
+                    // filmModalNotes.dataset.id = filmModalContent.id 
+
+                    const noteTitle = document.querySelector("input-text-title")
+                    const noteContent = document.querySelector("input-text-content")
+                    const noteTimeStamp = document.querySelector("input-text-timestamp")
+
+                    fetch(`http://localhost:3000/notes`, {
+                        
+                        method: "POST",
+                        headers: { "Content-Type": "application/json"},
+                        body: JSON.stringify({
+                            title: noteTitle,
+                            content: noteContent,
+                            timeStamp: noteTimeStamp
+                        })                       
+                    })
+                    .then(response => response.json())
+                    .then( newNote => {
+                        console.log(newNote)
+                    })
+        
+                    // filmModalNotes.innerHTML =  `
+                    // <p></p>
+                    // <p></p>
+                    // <p></p>
+                    // <p></p>
+                    // <button class="delete-btn">Delete</button>
+                    // `
+        
+                }
+            })
 
         }
 
@@ -172,19 +209,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             closeModal()
         }
 
-        // if (event.target.matches(".submit-btn")) {
-        //     const filmModalContent = document.querySelector(".film-modal-content")
-        //     const filmModalNotes = filmModalContent.createElement("div")
-        //     filmModalNotes.classList.add("film-modal-notes")
-        //     filmModalNotes.dataset.id = filmModalContent.id 
-
-        //     filmModalNoted.innerHTML =  `
-        //     <p></p>
-        //     <p></p>
-        //     <p></p>
-        //     <p></p>
-        //     `
-
-        // }
     })
+
 })
