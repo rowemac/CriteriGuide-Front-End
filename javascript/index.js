@@ -161,18 +161,19 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
                     // filmModalNotes.classList.add("film-modal-notes")
                     // filmModalNotes.dataset.id = filmModalContent.id 
 
-                    const noteTitle = document.querySelector("input-text-title")
-                    const noteContent = document.querySelector("input-text-content")
-                    const noteTimeStamp = document.querySelector("input-text-timestamp")
+                    const noteTitle = document.querySelector(".input-text-title").value
+                    const noteContent = document.querySelector(".input-text-content").value
+                    const noteTimeMarker = document.querySelector(".input-text-timestamp").value
 
-                    fetch(`http://localhost:3000/notes`, {
+                    fetch(`http://localhost:3000/films/${filmID}/notes`, {
                         
                         method: "POST",
                         headers: { "Content-Type": "application/json"},
                         body: JSON.stringify({
                             title: noteTitle,
                             content: noteContent,
-                            timeStamp: noteTimeStamp
+                            time_marker: noteTimeMarker,
+                            film_id: filmID
                         })                       
                     })
                     .then(response => response.json())
