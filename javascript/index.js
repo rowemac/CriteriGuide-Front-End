@@ -153,14 +153,9 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             openForm()
 
             noteForm.addEventListener("click", event => { event.preventDefault()
-                console.log(event.target)
                 if (event.target.matches(".submit-btn")) {
                     const filmModalContent = document.querySelector(".film-modal-content")
                     const filmID = filmModalContent.dataset.id
-                    // const filmModalNotes = filmModalContent.createElement("div")
-                    // filmModalNotes.classList.add("film-modal-notes")
-                    // filmModalNotes.dataset.id = filmModalContent.id 
-
                     const noteTitle = document.querySelector(".input-text-title").value
                     const noteContent = document.querySelector(".input-text-content").value
                     const noteTimeMarker = document.querySelector(".input-text-time-marker").value
@@ -179,15 +174,13 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
                     .then(response => response.json())
                     .then( newNote => {
                         console.log(newNote)
-                    })
-        
-                    // filmModalNotes.innerHTML =  `
-                    // <p></p>
-                    // <p></p>
-                    // <p></p>
-                    // <button class="delete-btn">Delete</button>
-                    // `
-        
+                        document.querySelector(".input-text-title").value = ""
+                        document.querySelector(".input-text-content").value = ""
+                        document.querySelector(".input-text-time-marker").value = ""
+                    })  
+                    
+
+
                 }
             })
 
@@ -199,8 +192,12 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
             function closeForm() {
                 noteForm.style.display = "none"
-            }
+                document.querySelector(".input-text-title").value = ""
+                document.querySelector(".input-text-content").value = ""
+                document.querySelector(".input-text-time-marker").value = ""
+            }   
             closeForm()
+
 
             function closeModal() {
                 filmModal.style.display = "none"
