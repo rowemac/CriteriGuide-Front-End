@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
 
                     const noteTitle = document.querySelector(".input-text-title").value
                     const noteContent = document.querySelector(".input-text-content").value
-                    const noteTimeMarker = document.querySelector(".input-text-timestamp").value
+                    const noteTimeMarker = document.querySelector(".input-text-time-marker").value
 
                     fetch(`http://localhost:3000/films/${filmID}/notes`, {
                         
@@ -182,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
                     })
         
                     // filmModalNotes.innerHTML =  `
-                    // <p></p>
                     // <p></p>
                     // <p></p>
                     // <p></p>
