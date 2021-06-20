@@ -2,7 +2,7 @@
 
 ## Description
 
-The CriteriGuide web application acts as a viewer's guide to track a user's real-world interaction with a must-see selection of the Criterion Film Collection. A user may mark a film as watched and/or favorited as well as add individual viewing notes with an entered time stamp for further study or reference. 
+The CriteriGuide Single Page Application (SPA) acts as a viewer's guide to track a user's real-world interaction with a must-see selection of the Criterion Film Collection. A user may mark a film as watched and/or favorited as well as add individual viewing notes with an entered time stamp for further study or reference. 
 
 **This repo should be used in conjunction with the backend repo link listed below to fully experience the app's functionality.**
 
