@@ -2,36 +2,58 @@ class Note {
 
     static all = []
 
-    constructor (id, title, content, timeMarker, filmID) {
+    constructor (id, title, content, time_marker, film_id) {
         this.id = id
         this.title = title
         this.content = content
-        this.timeMarker = timeMarker
-        this.filmID = filmID
+        this.time_marker = time_marker
+        this.film_id = film_id
 
         Note.all.push(this)
+        this.renderNote()
     }
 
-    // renderNote() {
-    //     const filmModalContent = document.querySelector(".film-modal-content")
-    //     const filmModalNotes = filmModalContent.createElement("div")
+    renderNote() {
+        const filmModalContent = document.querySelector(".film-modal-content")
+        const filmModalNotes = document.createElement("div")
+
         
-    //     filmModalNotes.classList.add("film-modal-notes")
-    //     filmModalNotes.dataset.id = filmModalContent.id
-    //     filmModalNotes.id = this.id
-    //     filmModalNotes.innerHTML += this.noteHTML()
+        filmModalNotes.classList.add("film-modal-notes")
+        filmModalNotes.dataset.id = filmModalContent.id
+        filmModalNotes.id = this.id
+        filmModalNotes.innerHTML += this.noteHTML()
 
-    //     filmModalContent.appendChild(filmModalNotes)
-    // }
+        filmModalNotes.addEventListener("click", event => {
+            const id = this.id
+            const filmID = this.film_id
 
-    // noteHTML() {
-    //     return `
-    //     <p></p>
-    //     <p></p>
-    //     <p></p>
-    //     <button class="delete-btn">Delete</button>
-    //     `
-    // }
+            if(event.target.matches(".delete-btn")) {
 
+                // fetch(`http://localhost:3000/films/${this.filmID}/notes/${this.id}`, {
+                //     method: "DELETE",
+                //     headers: { "Content-Type": "application/json" }
+                // })
+
+            }
+
+
+        })
+
+        filmModalContent.appendChild(filmModalNotes)
+    }
+
+    noteHTML() {
+        return `
+        <p>${this.title}</p>
+        <p>${this.content}</p>
+        <p>${this.time_marker}</p>
+        <br>
+        <button class="delete-btn">Delete</button>
+        `
+    }
+
+    deleteNote() {
+
+    }
 
 }
