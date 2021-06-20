@@ -141,6 +141,8 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
             filmModal.appendChild(filmModalContent)
 
             modal.style.display = "block"
+
+            API.addNotes(indFilm.id)
         }
 
         if (event.target.matches(".add-notes-btn")) {
