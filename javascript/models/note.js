@@ -28,14 +28,16 @@ class Note {
             const filmID = this.film_id
 
             if(event.target.matches(".delete-btn")) {
-
-                // fetch(`http://localhost:3000/films/${this.filmID}/notes/${this.id}`, {
-                //     method: "DELETE",
-                //     headers: { "Content-Type": "application/json" }
-                // })
-
+                console.log(id)
+                console.log(filmID)
+                fetch(`http://localhost:3000/films/${filmID}/notes/${id}`, {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" }
+                })
+                .then(response => response.json())
+                // .then(console.log)
+                
             }
-
 
         })
 
