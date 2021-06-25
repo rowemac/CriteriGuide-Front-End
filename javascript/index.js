@@ -66,46 +66,19 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
         if (event.target.matches("#watched-link")) {
             const filmCollectionDiv = document.querySelector(".grid-container")
             filmCollectionDiv.innerHTML = ""
-            fetch("http://localhost:3000/films")
-            .then(response => response.json())
-            .then(films => {
-                films.forEach( film => {
-                    if(film.watched === true) {
-                        const { id, title, director, year, synopsis, runtime, image, favorited, watched, genre } = film
-                        new Film( id, title, director, year, synopsis, runtime, image, favorited, watched, genre )
-                    }
-                })
-            })
+            API.showWatched()
         }   
 
         if (event.target.matches("#favorited-link")) {
             const filmCollectionDiv = document.querySelector(".grid-container")
             filmCollectionDiv.innerHTML = ""
-            fetch("http://localhost:3000/films")
-            .then(response => response.json())
-            .then(films => {
-                films.forEach( film => {
-                    if(film.favorited === true) {
-                        const { id, title, director, year, synopsis, runtime, image, favorited, watched, genre } = film
-                        new Film( id, title, director, year, synopsis, runtime, image, favorited, watched, genre )
-                    }
-                })
-            })
+            API.showFavorited()
         }
 
         if (event.target.matches("#unwatched-link")) {
             const filmCollectionDiv = document.querySelector(".grid-container")
             filmCollectionDiv.innerHTML = ""
-            fetch("http://localhost:3000/films")
-            .then(response => response.json())
-            .then(films => {
-                films.forEach( film => {
-                    if(film.watched === false) {
-                        const { id, title, director, year, synopsis, runtime, image, favorited, watched, genre } = film
-                        new Film( id, title, director, year, synopsis, runtime, image, favorited, watched, genre )
-                    }
-                })
-            })
+            API.showQueue()
         }
 
         if (event.target.matches("#logo-home-link")) {
