@@ -175,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Conte
                     })
                     .then(response => response.json())
                     .then( newNote => {
-                        // filmModalContent.append(newNote)
                         const { id, title, content, time_marker, film_id} = newNote
                         new Note ( id, title, content, time_marker, film_id)
                         document.querySelector(".input-text-title").value = ""
