@@ -35,10 +35,8 @@ class Note {
                     headers: { "Content-Type": "application/json" }
                 })
                 .then(response => response.json())
-                // .then(console.log)
-                
+                .then(filmModalNotes.remove())
             }
-
         })
 
         filmModalContent.appendChild(filmModalNotes)
@@ -54,8 +52,10 @@ class Note {
         `
     }
 
-    deleteNote() {
-
-    }
 
 }
+
+
+
+
+
