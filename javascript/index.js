@@ -1,6 +1,7 @@
 let watchedFilm = false
 let favoritedFilm = false
 let displayNoteForm = false
+let darkMode = false
 
 document.addEventListener("DOMContentLoaded", function(){ console.log("DOM Content Loaded")
     
